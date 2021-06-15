@@ -1,0 +1,9 @@
+---
+- hosts: build_host
+  gather_facts: no
+  tasks:
+  - name: Start docker program in terminal
+    docker_container:
+      name: hello_container_v1.0.tar
+      image: hello_container:v1.0
+      init: yes

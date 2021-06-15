@@ -1,0 +1,24 @@
+---
+- hosts: build_host
+  gather_facts: no
+  tasks:
+    - name: create build directory
+      file:
+        path: ~/Documents/simple-test/project2021-main
+        state: directory
+        owner: andrere
+        group: axusers
+        mode: '0755'
+    - name: copy Dockerfile
+      copy:
+        src: ./Dockerfile
+        dest: ~/Documents/simple-test/project2021-main/Dockerfile
+        owner: andrere
+        group: axusers
+        mode: '0644'
+    - name: build container image
+      docker_image:
+        name: hello_container:v1.0
+        build:
+          path: ~/Documents/simple-test/project2021-main
+        source: build
