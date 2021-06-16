@@ -5,12 +5,12 @@
     - name: copy tarball to host
       copy:
         src: ./hello_container_v1_0.tar
-        dest: ~/Documents/simple-test/project2021-main/hello_container_v1_0.tar
+        dest: ~/Documents/simple-test/project2021-main/testarAnsible/hello_container_v1_0.tar
 
     - name: load container from tarball
       docker_image:
         name: hello_container:v1.0
-        load_path: ~/Documents/simple-test/project2021-main/hello_container_v1_0.tar
+        load_path: ~/Documents/simple-test/project2021-main/testarAnsible/hello_container_v1_0.tar
         state: present
         source: load
 

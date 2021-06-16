@@ -4,7 +4,7 @@
   tasks:
     - name: create build directory
       file:
-        path: ~/Documents/simple-test/project2021-main
+        path: ~/Documents/simple-test/project2021-main/testarAnsible
         state: directory
         owner: andrere
         group: axusers
@@ -12,7 +12,7 @@
     - name: copy Dockerfile
       copy:
         src: ./Dockerfile
-        dest: ~/Documents/simple-test/project2021-main/Dockerfile
+        dest: ~/Documents/simple-test/project2021-main/testarAnsible/Dockerfile
         owner: andrere
         group: axusers
         mode: '0644'
@@ -20,5 +20,5 @@
       docker_image:
         name: hello_container:v1.0
         build:
-          path: ~/Documents/simple-test/project2021-main
+          path: ~/Documents/simple-test/project2021-main/testarAnsible
         source: build

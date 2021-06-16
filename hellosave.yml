@@ -5,11 +5,11 @@
     - name: archive container image as a tarball
       docker_image:
         name: hello_container:v1.0
-        archive_path: ~/Documents/simple-test/project2021-main/hello_container_v1_0.tar
+        archive_path: ~/Documents/simple-test/project2021-main/testarAnsible/hello_container_v1_0.tar
         source: pull
         state: present
     - name: fetch archived image
       fetch:
-        src: ~/Documents/simple-test/project2021-main/hello_container_v1_0.tar
+        src: ~/Documents/simple-test/project2021-main/testarAnsible/hello_container_v1_0.tar
         dest: ./hello_container_v1_0.tar
         flat: true
